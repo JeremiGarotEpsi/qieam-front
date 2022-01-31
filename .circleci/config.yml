@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   deploy-docker:
     docker:
-      - image: cimg/base
+      - image: cimg/base:2022.01-20.04
     steps:
       - checkout
       - run:
