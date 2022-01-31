@@ -3,6 +3,8 @@ version: 2.1
 
 jobs:
   deploy-docker:
+    docker:
+      - image: cimg/base
     steps:
       - checkout
       - run:
