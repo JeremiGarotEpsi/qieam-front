@@ -73,13 +73,13 @@
                     <h2>Add friend</h2>
                     <p>Give the name and add to your list.</p>
                     <p><a class="btn btn-default" href="#" role="button" id="addFriend">Add friend &raquo;</a></p>
-                    <input class="form-control form-control-lg" type="text" placeholder="new friend's name" id="newName">
+                    <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z'-'\s]*" placeholder="new friend's name" id="newName">
                 </div>
                 <div class="col-md-4">
                     <h2>Remove friend</h2>
                     <p>Want to break with friend? Remove him/her from your list.</p>
                     <p><a class="btn btn-default" href="#" role="button" id="deleteFriend">Delete friend &raquo;</a></p>
-                    <input class="form-control form-control-lg" type="text" placeholder="old friend's name" id="oldName">
+                    <input class="form-control form-control-lg" type="text" pattern="[a-zA-Z'-'\s]*" placeholder="old friend's name" id="oldName">
                 </div>
             </div>
             <div class="row" id="listoffriends"></div>
