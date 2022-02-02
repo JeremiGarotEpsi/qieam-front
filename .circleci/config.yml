@@ -7,8 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Delete old folder
+          command: rm -rf /home/azureuser/public/html
+      - run:
           name: Deploy
-          command: scp -r public_html azureuser@20.126.120.69:/home/azureuser/
+          command: scp -r public_html azureuser@20.126.120.69:/home/azureuser/  
       - run:
           name: Configure backend
           command: ssh azureuser@20.126.120.69 "sed -i 's/localhost/20.126.120.69/' /home/azureuser/public_html/index.html"
