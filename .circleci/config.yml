@@ -8,14 +8,13 @@ jobs:
       - checkout
       - run:
           name: Deploy
-          command: scp -r public_html azureuser@40.115.3.23:/home/azureuser/
+          command: scp -r public_html azureuser@20.126.120.69:/home/azureuser/
       - run:
           name: Configure backend
-          command: ssh azureuser@40.115.3.23 "sed -i 's/localhost/40.115.3.23/' /home/azureuser/public_html/index.html"
+          command: ssh azureuser@20.126.120.69 "sed -i 's/localhost/20.126.120.69/' /home/azureuser/public_html/index.html"
       - run:
           name: Start
-          command: ssh azureuser@40.115.3.23 "(docker stop qieam-front || true) && (docker rm -f qieam-front || true) && (docker run --rm --name qieam-front -d -p 80:80 -v /home/azureuser/public_html:/usr/share/nginx/html:ro nginx:latest)"
-        
+          command: ssh azureuser@20.126.120.69 "(docker stop qieam-front || true) && (docker rm -f qieam-front || true) && (docker run --rm --name qieam-front -d -p 80:80 -v /home/azureuser/public_html:/usr/share/nginx/html:ro nginx:latest)"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -24,4 +23,3 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - deploy-docker
-
