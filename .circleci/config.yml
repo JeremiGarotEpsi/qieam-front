@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Delete old folder
-          command: rm -rf /home/azureuser/public/html
+          command: rm -rf /home/azureuser/public_html/
       - run:
           name: Deploy
           command: scp -r public_html azureuser@20.126.120.69:/home/azureuser/  
